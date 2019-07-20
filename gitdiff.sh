@@ -6,9 +6,12 @@ git diff HEAD~1 HEAD -U0 > file.txt
 
 while read LINE
 do
-    if [ $count -gt 4 ]
+    #If the line was added 
+    #|| [[ ${LINE:0:1} == "-" ]] 
+    if [[ ${LINE:0:1} == "+" ]] 
     then 
-        BODY="$BODY\n$LINE"
+        parsed=${LINE:1}
+        BODY="$BODY\n$parsed"
     fi
     let "count++"
 done < ./file.txt

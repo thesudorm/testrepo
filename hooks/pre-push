@@ -11,5 +11,6 @@ do
     diff=$(git diff HEAD~1 HEAD -U0)
     echo diff
 
-    #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
+    mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
+    mutt -s "I did my hourly coding challenge!" root@thesudorm.com
 done

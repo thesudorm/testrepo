@@ -9,7 +9,6 @@ while read local_ref local_sha remote_ref remote_sha
 do
     BODY=""
     NEWLINE=$'\n'
-    count=0
 
     git diff HEAD~1 HEAD -U0 > file.txt
 
@@ -22,12 +21,11 @@ do
             parsed=${LINE:1}
             BODY="$BODY\n$parsed"
         fi
-        let "count++"
     done < ./file.txt
 
 
     #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
-    mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt
+    mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i "Test"
 
     rm ./file.txt
 done

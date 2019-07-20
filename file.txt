@@ -1,11 +1,52 @@
-diff --git a/README.md b/README.md
-index 1e52836..36b3346 100644
---- a/README.md
-+++ b/README.md
-@@ -9,6 +8,0 @@ And again..
--And again..
--And again..
--And again..
--And again..
--And again..
--And again..
+diff --git a/file.txt b/file.txt
+new file mode 100644
+index 0000000..524513e
+--- /dev/null
++++ b/file.txt
+@@ -0,0 +1,11 @@
++diff --git a/README.md b/README.md
++index 1e52836..36b3346 100644
++--- a/README.md
+++++ b/README.md
++@@ -9,6 +8,0 @@ And again..
++-And again..
++-And again..
++-And again..
++-And again..
++-And again..
++-And again..
+diff --git a/gitdiff.sh b/gitdiff.sh
+new file mode 100755
+index 0000000..d43e22b
+--- /dev/null
++++ b/gitdiff.sh
+@@ -0,0 +1,8 @@
++# Try to get the diff information 
++
++git diff HEAD~1 HEAD -U0 > file.txt
++
++while read LINE
++    do echo "$LINE" | cut -f1 -d":"
++    #do echo "$LINE" 
++done < ./file.txt
+diff --git a/hooks/pre-push b/hooks/pre-push
+new file mode 100755
+index 0000000..a8689d4
+--- /dev/null
++++ b/hooks/pre-push
+@@ -0,0 +1,15 @@
++#!/bin/sh 
++
++remote="$1"
++url="$2"
++
++z40=0000000000000000000000000000000000000000
++
++while read local_ref local_sha remote_ref remote_sha
++do
++    # Try to get the diff information 
++    diff=$(git diff HEAD~1 HEAD -U0)
++    echo diff
++
++    #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
++done

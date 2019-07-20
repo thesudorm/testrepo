@@ -1,0 +1,15 @@
+#!/bin/sh 
+
+remote="$1"
+url="$2"
+
+z40=0000000000000000000000000000000000000000
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    # Try to get the diff information 
+    diff=$(git diff HEAD~1 HEAD -U0)
+    echo diff
+
+    #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
+done

@@ -1,6 +1,6 @@
 BODY=""
 NEWLINE=$'\n'
-count=0
+FILE="./file.txt"
 
 git diff HEAD~1 HEAD -U0 > file.txt
 
@@ -13,8 +13,13 @@ do
         parsed=${LINE:1}
         BODY="$BODY\n$parsed"
     fi
-    let "count++"
 done < ./file.txt
 
+echo -e $BODY > $FILE
+
+cat $FILE
+
+#mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
+#mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt
+
 rm ./file.txt
-echo -e $BODY

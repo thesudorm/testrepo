@@ -23,10 +23,12 @@ do
         fi
     done < ./file.txt
 
-    echo $BODY > ./file.txt
+    echo -e $BODY > ./file.txt
+
+    cat ./file.txt
 
     #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
-    mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt
+    #mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt
 
     rm ./file.txt
 done

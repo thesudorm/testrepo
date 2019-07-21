@@ -15,9 +15,9 @@ do
     fi
 done < ./file.txt
 
-echo -e $BODY > $FILE
+echo -e $BODY
 
-cat $FILE
+#cat $FILE
 
 #mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
 #mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt

@@ -5,3 +5,4 @@ git config core.hooksPath hooks/
 
 # Test 
 This is a test.
+This is a test.

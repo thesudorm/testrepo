@@ -15,11 +15,12 @@ do
     fi
 done < ./file.txt
 
-echo -e $BODY
+echo -e $BODY > $FILE
 
 #cat $FILE
 
-#mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net
-#mutt -s "I did my hourly coding challenge!" root@thesudorm.com -i ./file.txt
+mutt -s "I did my hourly coding challenge!" root@thesudorm.com < ./file.txt
+mutt -s "I did my hourly coding challenge!" sophia@sophialouise.net < ./file.txt
+mutt -s "I did my hourly coding challenge!" tom.errington217@gmail.com < ./file.txt
 
 rm ./file.txt

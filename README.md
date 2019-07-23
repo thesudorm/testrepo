@@ -1,3 +1,9 @@
+
+# How to configure git hooks dire
+git config core.hooksPath hooks/
+
+
+# Test 
 This is yet another test, again.
 And again.
 ...
